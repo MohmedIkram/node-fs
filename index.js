@@ -3,6 +3,7 @@ const app = express();
 import { statSync, readdir } from "fs";
 import emoji from "node-emoji";
 var content = "";
+const PORT = 3000;
 
 content = `list of files in my loocal storage(desktop files )`;
 let foo = (err, files) => {
@@ -24,4 +25,4 @@ readdir("C:/Users/ikram/Desktop/", "utf8", foo);
 app.get("/", (req, res) => {
   res.send(content);
 });
-app.listen(3000, () => console.log("server is started"));
+app.listen(PORT, () => console.log("server is started"));
